@@ -16,7 +16,6 @@ namespace Grouping
 
         private string contactName;
         private string contactNo;
-        private ImageSource image;
         private string contactType;
 
         #endregion
@@ -58,16 +57,6 @@ namespace Grouping
             {
                 this.contactType = value;
                 RaisePropertyChanged("ContactType");
-            }
-        }
-
-        public ImageSource ContactImage
-        {
-            get { return this.image; }
-            set
-            {
-                this.image = value;
-                this.RaisePropertyChanged("ContactImage");
             }
         }
 
