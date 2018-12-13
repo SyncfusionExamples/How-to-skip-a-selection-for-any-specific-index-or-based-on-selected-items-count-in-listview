@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Grouping.GroupingPage"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:Grouping"
+                  xmlns:synfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+    <ContentPage.BindingContext>
+        <local:ListViewGroupingViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="0">
+            <synfusion:SfListView x:Name="listView"
+                             ItemSize="70" 
+                             ItemsSource="{Binding ContactsInfo}"
+                             SelectionMode="Multiple"
+                             SelectionChanging="listView_SelectionChanging">
+                <synfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid x:Name="grid" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="1" />
+                                    </Grid.RowDefinitions>
+                                    <Grid RowSpacing="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="0"
+                          RowSpacing="1"
+                          Padding="10,0,0,0"
+                          VerticalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+
+                                            <Label LineBreakMode="NoWrap"
+                             TextColor="#474747"
+                             Text="{Binding ContactName}"/>
+
+
+                                            <Label Grid.Row="1"
+                             Grid.Column="0"
+                             TextColor="#474747"
+                             LineBreakMode="NoWrap"
+                             Text="{Binding ContactNumber}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="0"
+                          Grid.Column="2"
+                          RowSpacing="0"
+                          HorizontalOptions="End" VerticalOptions="Start"/>
+                                        <Label LineBreakMode="NoWrap"
+                             TextColor="#474747"
+                             Text="{Binding ContactType}"/>
+
+                                    </Grid>
+                                    <StackLayout Grid.Row="1" BackgroundColor="#E4E4E4" HeightRequest="1"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </synfusion:SfListView.ItemTemplate>
+            </synfusion:SfListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
