@@ -2,6 +2,8 @@
 
 This example demonstrates how to skip a selection for any specific index or based on selected items count in xamarin.forms listview.
 
+See [How to skip a selection for any specific index or based on selected items count in xamarin.forms listview](https://www.syncfusion.com/kb/10011/how-to-skip-a-selection-for-any-specific-index-or-based-on-selected-items-count-in-xamarin-forms) for more details.
+
 ## Requirements to run the demo
 
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)
